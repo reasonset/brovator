@@ -194,7 +194,7 @@ class BrowserChooser
       end
     end
 
-    @config[:profile_dir] = @config["PathBase"] || "#{ENV["XDG_CONFIG_HOME"] || "#{ENV["HOME"]}/.config}"}/reasonset/browsers"
+    @config[:profile_dir] = (@config["PathBase"] || "#{ENV["XDG_CONFIG_HOME"] || "#{ENV["HOME"]}/.config"}/reasonset/browsers")
 
     # set profile
     @specified_profile = ARGV.shift
