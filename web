@@ -5,31 +5,32 @@ class BrowserChooser
 
   STYLES = {
     fx: ->(profile, env, bin, arg, conf) {
-      exec(env, bin, "-P", profile, *arg)
+      pp env, *bin, "-P", profile, *arg
+      exec(env, *bin, "-P", profile, *arg)
     },
 
     chr: ->(profile, env, bin, arg, conf) {
       profile = File.join(conf[:profile_dir], profile)
-      exec(env, bin, "--user-data-dir=#{profile}", *arg)
+      exec(env, *bin, "--user-data-dir=#{profile}", *arg)
     },
 
     epp: ->(profile, env, bin, arg, conf) {
       profile = File.join(conf[:profile_dir], profile)
-      exec(env, bin, "--profile=#{profile}", *arg)
+      exec(env, *bin, "--profile=#{profile}", *arg)
     },
 
     flk: ->(profile, env, bin, arg, conf) {
-      exec(env, bin, "-p", profile, *arg)
+      exec(env, *bin, "-p", profile, *arg)
     },
 
     myb: ->(profile, env, bin, arg, conf) {
       profile = File.join(conf[:profile_dir], profile)
-      exec(env, bin, "--basedir=#{profile}", *arg)
+      exec(env, *bin, "--basedir=#{profile}", *arg)
     },
 
     wvf: ->(profile, env, bin, arg, conf) {
       profile = "//profile/#{profile}"
-      exec(env, bin, "//target/0", profile, *arg)
+      exec(env, *bin, "//target/0", profile, *arg)
     },
   }
 
@@ -232,10 +233,13 @@ class BrowserChooser
         arg.push params["url"]
       end
 
+      bin = @browsers[params["type"]][:bin]
+      bin = Array === bin ? bin : [bin]
+
       @browsers[params["type"]][:proc].call(
         (params["pstr"] || @specified_profile),
         (params["env"] || {}),
-        @browsers[params["type"]][:bin],
+        bin,
         arg,
         @config)
     end
