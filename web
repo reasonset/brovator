@@ -123,7 +123,7 @@ class BrowserChooser
       end
       profile_dialog_select selected_profile&.strip
     when "rofi"
-      IO.popen(["rofi", "-dmenu", "-window-title", "Select Browser Profile"], "w+") do |io|
+      IO.popen(["rofi", "-dmenu", "-window-title", "Select Browser Profile", "-sort"], "w+") do |io|
         io.puts @profiles.keys
         io.close_write
         selected_profile = io.read
