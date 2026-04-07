@@ -44,6 +44,7 @@ class BrowserChooser
     "smk" => {bin: "seamonkey", proc: STYLES[:fx]},
     "wolf" => {bin: "librewolf", proc: STYLES[:fx]},
     "cachy" => {bin: "cachy-browser", proc: STYLES[:fx]},
+    "zen" => {bin: "zen-browser", proc: STYLES[:fx]},
     "ict" => {bin: "ictcat", proc: STYLES[:fx]},
     "flp" => {bin: "floorp", proc: STYLES[:fx]},
     "mdr" => {bin: "midori", proc: STYLES[:fx]},
