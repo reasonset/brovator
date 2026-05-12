@@ -14,6 +14,11 @@ class BrowserChooser
       exec(env, *bin, "--user-data-dir=#{profile}", *arg)
     },
 
+    srv: ->(profile, env, bin, arg, conf) {
+      profile = File.join(conf[:profile_dir], profile)
+      exec(env, *bin, "--config-dir=#{profile}", *arg)
+    },
+
     epp: ->(profile, env, bin, arg, conf) {
       profile = File.join(conf[:profile_dir], profile)
       exec(env, *bin, "--profile=#{profile}", *arg)
@@ -69,6 +74,7 @@ class BrowserChooser
     "epp" => {bin: "epiphany", proc: STYLES[:epp]},
     "myb" => {bin: "mybrowse", proc: STYLES[:myb]},
     "wvf" => {bin: "weaver", proc: STYLES[:wvf]},
+    "srv" => {bin: "servoshell", proc: STYLES[:srv]},
     "lfx1" => {bin: "firefox", proc: STYLES[:fx]},
     "lfx2" => {bin: "firefox", proc: STYLES[:fx]},
     "lfx3" => {bin: "firefox", proc: STYLES[:fx]},
@@ -105,6 +111,7 @@ class BrowserChooser
   BROWSERS["otter"] = BROWSERS["ott"]
   BROWSERS["mybrowse"] = BROWSERS["myb"]
   BROWSERS["weaver"] = BROWSERS["wvf"]
+  BROWSERS["servo"] = BROWSERS["srv"]
 
   ##################################
 

@@ -93,6 +93,7 @@ Avilable types are:
 |`epp`|GNOME Epiphany|`epiphany`|`epiphany`|
 |`myb`|mybrowse|`mybrowse`|`mybrwose`|
 |`wvf`|Weaver (Fossil)|`weaver`|`weaver`|
+|`srv`|Servo|`servoshell`|`servo`|
 |`lfx1`|Logical Firefox style for override|`firefox`||
 |`lfx2`|Logical Firefox style for override|`firefox`||
 |`lfx3`|Logical Firefox style for override|`firefox`||
