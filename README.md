@@ -1,8 +1,10 @@
-# My Browser Profile Chooser.
+# Brovator
 
 Easy to switch each browser with each profile.
 
-# Usage
+This used to be called "my-browser-profile-chooser".
+
+## Usage
 
 ```
 web <profile_name> [*arg]
@@ -13,11 +15,11 @@ web
 If profile name is not given, this script asks witch profile to use with Zenity dialog,
 and also if `-` is given as profile name.
 
-# Configuration
+## Configuration
 
-## Config file
+### Config file
 
-Define functions on `$XDG_CONFIG_HOME/reasonset/browserprofiles.yaml`.
+Define functions on `$XDG_CONFIG_HOME/reasonset/brovator.yaml` or `$XDG_CONFIG_HOME/reasonset/browserprofiles.yaml`.
 
 for example:
 
@@ -43,7 +45,7 @@ PathBase: /home/jrh/browser
 Dialog: kdialog
 ```
 
-### Profiles
+#### Profiles
 
 Each profile has name as key and settings as value.
 
@@ -111,7 +113,7 @@ You cannot specify profile directory path.
 
 Otter Browser takes profile direcory.
 
-### Override
+#### Override
 
 Override browser command.
 
@@ -125,13 +127,20 @@ Override:
   gch: google-chrome
 ```
 
-### PathBase
+Using this feature, you can use lfxN or lchN to override the command for web browsers based on Firefox or Chromium that have similar profile selection options but are not defined in this software.
+
+```yaml
+Override:
+  lch1: Chroronium
+```
+
+#### PathBase
 
 Profile directory prefix on `pstr` means profile path.
 
 If ommitted, use `${XDG_CONFIG_DIR}:-${HOME}/.config}/reasonset/browsers` instead.
 
-### Dialog
+#### Dialog
 
 What dialog to use for selecting profile.
 
@@ -140,24 +149,24 @@ You can choice `yad`, `kdialog`, `rofi`, `dmenu`, `bemenu` or else.
 
 `dmenu` or `bemenu` refers `menu_monitor` configuration.
 
-# Important changes
+## Important changes
 
-## Profile paramater
+### Profile paramater
 
 Change profile key name `opt` to `opts`
 
-## Defunct supports
+### Defunct supports
 
 * Qupzilla is renamed to Falkon.
 * Midori losts configuration directory option. (Chromium based version)
 * Maxthon web browser is discontinued.
 * Rekonq is discontinued.
 
-## Uncompatibility
+### Uncompatibility
 
 *Version 3.x is not compartible to 1.x or 2.x!!*
 
-## Default path base
+### Default path base
 
 Before version 3.3, `PathBase` is not set.
 

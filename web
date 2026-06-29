@@ -214,7 +214,11 @@ class BrowserChooser
   end
 
   def load_config
-    @config = YAML.load(File.read("#{ENV["HOME"]}/.config/reasonset/browserprofiles.yaml")) rescue err("config file not found or parse error.")
+    config_place = ["#{ENV["XDG_CONFIG_HOME"]}/reasonset/brovator.yaml", "#{ENV["HOME"]}/.config/reasonset/brovator.yaml", "#{ENV["XDG_CONFIG_HOME"]}/reasonset/browserprofiles.yaml", "#{ENV["HOME"]}/.config/reasonset/browserprofiles.yaml", "#{ENV["XDG_CONFIG_HOME"]}/brovator.yaml", "#{ENV["HOME"]}/.config/brovator.yaml"].find {|i| File.exist? i }
+    unless config_place
+      err "Configuration file is not found."
+    end
+    @config = YAML.load(config_place) rescue err("config file parse error.")
     unless Hash === @config
       err "Your config is not a Hash."
     end
