@@ -89,6 +89,7 @@ Avilable types are:
 |`br`|Brave|`brave`|`brave`|
 |`sj`|Flashpeak Slimjet|`slimjet`|`slimjet`|
 |`sri`|SRware Iron|`srware-iron`|`iron`, `srware`|
+|`he`|Helium Browser|`helium`|`helium`|
 |`ott`|Otter Browser|`otter-browser`|`otter`|
 |`epp`|GNOME Epiphany|`epiphany`|`epiphany`|
 |`myb`|mybrowse|`mybrowse`|`mybrwose`|
