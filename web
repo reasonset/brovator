@@ -70,7 +70,7 @@ class BrowserChooser
     "br" => {bin: "brave", proc: STYLES[:chr]},
     "sj" => {bin: "flashpeak-slimjet", proc: STYLES[:chr]},
     "sri" => {bin: "srware-iron", proc: STYLES[:chr]},
-    "he" => {bin: "helium", proc: STYLES[:chr]}
+    "he" => {bin: "helium", proc: STYLES[:chr]},
     "ott" => {bin: "otter-browser", proc: STYLES[:epp]},
     "epp" => {bin: "epiphany", proc: STYLES[:epp]},
     "myb" => {bin: "mybrowse", proc: STYLES[:myb]},
