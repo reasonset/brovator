@@ -218,7 +218,7 @@ class BrowserChooser
     unless config_place
       err "Configuration file is not found."
     end
-    @config = YAML.load(config_place) rescue err("config file parse error.")
+    @config = YAML.load(File.read config_place) rescue err("config file parse error.")
     unless Hash === @config
       err "Your config is not a Hash."
     end
